@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="/static/styles.css" rel="stylesheet">
+  <title>{% block title %}{% endblock %} - shortn</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><span class="purple">sho</span>rtn</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav nav-pills nav-right">
+                {% if username %}
+                <li role="presentation" class="active">
+                    <form method="POST" action="/logout" >
+                        <button class="navig-link top-nav">logout</button>
+                    </form>
+                </li>
+                <li role="presentation" class="navbar-text">
+                    <p><em>logged in as {{username}}</em></p>
+                </li>
+                {% elif formType == 'register' %}
+                <li role="presentation" class="navig-link-reverse top-nav">
+                    <a href="/login"><div>login</div></a>
+                </li>
+                {% elif formType == 'login' %}
+                <li role="presentation" class="navig-link-reverse top-nav">
+                    <a href="/register"><div>register</div></a>
+                </li>
+                {% else %}
+                <li role="presentation" class="navig-link top-nav">
+                    <a href="/login"><div>login</div></a>
+                </li>
+                <li role="presentation" class="navig-link-reverse top-nav">
+                    <a href="/register"><div>register</div></a>
+                </li>
+                {% endif %}
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="content">
+        <br>
+        {% block content %}{% endblock %}
+    </section>
+    <section id="footer">
+        &copy; Made with ❤️ 2022 by <a href="http://127.0.0.1:5000/">Jelilat Adebayo</a>.
+    </section>
+</body>
+</html>

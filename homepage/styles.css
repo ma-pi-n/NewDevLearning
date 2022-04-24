@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.4;
+  font-size: 18px;
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+#header {
+  margin-bottom: 0px!important;
+}
+
+#header.hero {
+  padding-top: 10em !important;
+  background-image: url(https://docrdsfx76ssb.cloudfront.net/static/1649951924/pages/wp-content/uploads/2022/04/H-Generic-LP-new.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-y: bottom;
+  background-size: 1600px;
+}
+
+#header.pricing > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+#header.pricing h1 {
+  text-align: center;
+}
+
+#header h1 {
+  font-weight: bolder;
+}
+
+#header.hero h1, #header.hero h2 {
+  max-width: 595px;
+}
+
+#header .lead {
+  margin-bottom: 2.5em;
+}
+
+#main > section {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  min-height: 300px;
+  border-bottom: 1px solid gainsboro;
+  /* border-bottom: 1px solid #f8f9fa; */
+}
+
+.pricing-wrapper > article .card-header {
+  text-transform: uppercase;
+}
+
+.pricing-wrapper > article .card-body {
+  padding: 24px;
+}
+
+.pricing-wrapper > article .card-body > a {
+  margin-bottom: 48px;
+  margin-top: 32px;
+}
+
+.pricing-wrapper > article {
+  min-height: 500px;
+  width: 380px;
+}
+
+.pricing-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul.brands {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+ul.brands > li {
+  padding: 16px 40px;
+}
+
+ul.brands .brand-logo {
+  width: 100px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#footer {
+  padding-top: 6em;
+  padding-bottom: 2em;
+  width: 100%;
+  text-align: center;
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#footer > p {
+  max-width: 520px;
+  margin-top: 1em;
+}
+
+.page-heading {
+  font-size: 32px;
+}
+
+.alert {
+  padding: 8px 16px;
+  border-radius: 3px;
+}
+
+.navbar-brand, .navbar-brand span {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.purple {
+  color: purple;
+  font-size: inherit;
+}
+
+.nav {
+  height: 50px;
+  margin: 15px 0px;
+}
+
+li {
+  list-style: none;
+}
+
+.nav-pills>li {
+  float: right;
+  margin-left: 4px;
+}
+
+.nav-pills>li>a {
+  color: inherit;
+  padding: 0px;
+  line-height: 1;
+}
+
+.nav-pills .top-nav, .nav-pills .top-nav > a > div {
+width: 100px;
+height: 50px;
+line-height: 1;
+}
+
+.top-nav > a {
+margin-top: -14px;
+display: inline;
+}
+
+.nav > li > a:hover {
+background-color: transparent;
+}
+
+.top-nav > a > div {
+padding: 14px 0px;
+text-align: center;
+}
