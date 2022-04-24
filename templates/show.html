@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Url details{% endblock %}
+{% block content %}
+{% if username %}
+<h1 class="page-heading">
+  Shortened URL: <a style="font-size: inherit;" href="/u/{{ url.id }}" target="blank">{{ url.id }}</a>
+</h1>
+<hr/>
+<br/>
+<a href="/urls/new" style="display: flex;"><div class="navig-link-reverse">shorten new</div></a>
+<br>
+<dl>
+  <dt>More info:</dt>
+  <dd>{{ url.totalVisits }} total visits</dd>
+  <dd>{{ url.totalVisitors }} unique number of visitors</dd>
+  <br>
+  <dt>Original url:</dt>
+  <dd>
+    <form class="inline" method="POST" action="/urls/{{ url.id }}">
+        <label for=longURL></label><input type="textbox" name="longURL" value="{{ url.long }}"><button>update</button>
+    </form>
+    <form id="faded" class="inline" method="POST" action="/urls/{{ url.id }}/delete">
+        <button>delete</button>
+    </form>
+  </dd>
+  <br>
+  <hr>
+  <dt>Details of visits:</dt> 
+  <dd>
+    <ul id="list-ul">
+      <li id="table-title">
+        <span>visitor id</span>
+        <span>time of visit</span>
+      </li>
+      <hr>
+      {% for visitor, visits in url.visits.items() %}
+        {% for v in visits %}
+          <li>
+            <a>{{ visitor }}</a>
+            <time datetime="{{v.time}}">{{ v.time }}</time>
+          </li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </dd>
+</dl>
+<br>
+<hr>
+<nav>
+  <a href="/urls"><div class="navig-link" style="float: none;">my links</div></a>
+</nav>
+{% endif %}
+{% endblock content%}

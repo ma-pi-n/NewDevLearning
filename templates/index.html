@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if username %}
+<h1 class="page-heading">Hello {{username}}, welcome to <span class="purple">sho</span>rtn.</h1>
+<hr />
+<div id="go-new"><a href="/urls/new"><div>shorten new link</div></a></div>
+<ul id="list-ul">
+    {% if url_count > 0 %}
+        <br /><br/>
+        <h3>Here are your shortened links:</h3>
+        <li id="table-title">
+            <span>shortened link</span>
+            <span>original link</span>
+        </li>
+        {% for url in urls %}
+        <li>
+            <hr>
+            <a href="/u/{{ url.id }}" target="blank">{{ url.id }}</a>
+            <a href="/urls/{{ url.id }}">{{ (url.long[:25] + '...') if len(url.long) > 25 else url.long }}</a>
+            
+            <form method="POST" action="/urls/{{ url.id }}/delete" id="faded" class="inline table-nav edit">
+                <button>delete</button>
+            </form>
+            <a class ="edit" href="/urls/{{ url.id }}">
+                <div class="navig-link-reverse table-nav">edit</div>
+            </a>
+        </li>
+        {% endfor %}
+    {% else %}
+        <h3>You have no links saved, shorten new links to witness the awesomeness</h3>
+    {% endif %}
+</ul>
+{% endif %}
+{% endblock %}

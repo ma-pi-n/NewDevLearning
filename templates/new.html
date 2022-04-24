@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}New{% endblock %}
+{% block content %}
+{% if username %}
+<h1 class="page-heading">Hey {{username}}, want to shorten a new link?</h1>
+<hr/>
+<br/>
+<form action="/urls" method="POST" class="input-group">
+  <input id="longURL" type="text" name="longURL" class="form-control" placeholder="http://...">
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="submit">shorten</button>
+  </span>
+</form>
+<br/>
+<hr/>
+<a href="/urls"><div class="navig-link">my links</div></a>
+{% endif %}
+{% endblock %}
